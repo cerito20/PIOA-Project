@@ -76,9 +76,9 @@
      <widget class="QComboBox" name="cb_categories">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>350</x>
         <y>500</y>
-        <width>201</width>
+        <width>211</width>
         <height>61</height>
        </rect>
       </property>
@@ -102,6 +102,11 @@
       <property name="frame">
        <bool>true</bool>
       </property>
+      <item>
+       <property name="text">
+        <string>Без категории</string>
+       </property>
+      </item>
       <item>
        <property name="text">
         <string>Спорт</string>

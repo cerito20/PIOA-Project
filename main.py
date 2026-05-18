@@ -60,6 +60,7 @@ class MainWindow(QMainWindow):
     def categories(self, category):
         # Возвращает отсортированный список по заранее заданным критериям по категориям.
         match(category):
+            case 'Без категории': filtered = self.df # Исходный датасет без фильтров
             case 'Спорт': filtered = self.df.loc[(self.df['acceleration'] > 12) & (self.df['horsepower'] > 200)] # Фильтры пока что случайные
             # Сюда в будущем добавлять остальные категории
         return filtered
