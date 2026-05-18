@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="Menu">
      <widget class="QLabel" name="lb_greetings">
@@ -115,7 +115,7 @@
        <rect>
         <x>650</x>
         <y>50</y>
-        <width>511</width>
+        <width>521</width>
         <height>401</height>
        </rect>
       </property>
@@ -155,10 +155,10 @@
      <widget class="QTableWidget" name="table">
       <property name="geometry">
        <rect>
-        <x>650</x>
-        <y>484</y>
-        <width>500</width>
-        <height>385</height>
+        <x>550</x>
+        <y>518</y>
+        <width>271</width>
+        <height>345</height>
        </rect>
       </property>
       <property name="layoutDirection">
@@ -192,7 +192,7 @@
        <bool>false</bool>
       </property>
       <property name="rowCount">
-       <number>9</number>
+       <number>8</number>
       </property>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -267,11 +267,6 @@
         <string>New Row</string>
        </property>
       </row>
-      <row>
-       <property name="text">
-        <string>New Row</string>
-       </property>
-      </row>
       <column>
        <property name="text">
         <string>Характеристика</string>
@@ -284,7 +279,7 @@
       </column>
       <item row="0" column="0">
        <property name="text">
-        <string>Модель</string>
+        <string>Расход топлива (Миль на галлон)</string>
        </property>
       </item>
       <item row="0" column="1">
@@ -294,7 +289,7 @@
       </item>
       <item row="1" column="0">
        <property name="text">
-        <string>Расход топлива (Миль на галлон)</string>
+        <string>Количество циллиндров</string>
        </property>
       </item>
       <item row="1" column="1">
@@ -304,7 +299,7 @@
       </item>
       <item row="2" column="0">
        <property name="text">
-        <string>Количество циллиндров</string>
+        <string>Обьём двигателя</string>
        </property>
       </item>
       <item row="2" column="1">
@@ -314,7 +309,7 @@
       </item>
       <item row="3" column="0">
        <property name="text">
-        <string>Обьём двигателя</string>
+        <string>Количество л.с.</string>
        </property>
       </item>
       <item row="3" column="1">
@@ -324,7 +319,7 @@
       </item>
       <item row="4" column="0">
        <property name="text">
-        <string>Количество л.с.</string>
+        <string>Общий вес</string>
        </property>
       </item>
       <item row="4" column="1">
@@ -334,7 +329,7 @@
       </item>
       <item row="5" column="0">
        <property name="text">
-        <string>Общий вес</string>
+        <string>Ускорение</string>
        </property>
       </item>
       <item row="5" column="1">
@@ -344,7 +339,7 @@
       </item>
       <item row="6" column="0">
        <property name="text">
-        <string>Ускорение</string>
+        <string>Год выпуска (19XX)</string>
        </property>
       </item>
       <item row="6" column="1">
@@ -354,20 +349,10 @@
       </item>
       <item row="7" column="0">
        <property name="text">
-        <string>Год выпуска (19XX)</string>
-       </property>
-      </item>
-      <item row="7" column="1">
-       <property name="text">
-        <string/>
-       </property>
-      </item>
-      <item row="8" column="0">
-       <property name="text">
         <string>Страна-производитель</string>
        </property>
       </item>
-      <item row="8" column="1">
+      <item row="7" column="1">
        <property name="text">
         <string/>
        </property>
@@ -405,7 +390,7 @@
         <x>290</x>
         <y>30</y>
         <width>271</width>
-        <height>71</height>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -414,13 +399,13 @@
        </font>
       </property>
       <property name="text">
-       <string>Категория 1</string>
+       <string>Категория</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="lb_category_2">
+     <widget class="QLabel" name="lb_list">
       <property name="geometry">
        <rect>
         <x>50</x>
@@ -436,6 +421,51 @@
       </property>
       <property name="text">
        <string>Список автомобилей</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_carName">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>790</y>
+        <width>361</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photo">
+      <property name="geometry">
+       <rect>
+        <x>850</x>
+        <y>510</y>
+        <width>321</width>
+        <height>211</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

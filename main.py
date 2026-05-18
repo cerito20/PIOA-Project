@@ -6,6 +6,7 @@ from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 import numpy as np
 import pandas as pd
 from PyQt5.QtWidgets import QMainWindow, QApplication, QWidget, QVBoxLayout, QPushButton, QListWidget
+from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
 from PyQt5 import uic
 import sys
@@ -51,12 +52,15 @@ class MainWindow(QMainWindow):
         for i in range(self.table.rowCount()):     # 
                 table_item = self.table.item(i, 1) # Очистка таблицы от прошлых значений
                 table_item.setText(' ')            # 
+        self.photo.clear() # Очистка прошлой фотографии
+        self.lb_carName.clear() # Очистка прошлого названия
+        self.photo.setToolTip("")
         self.stackedWidget.setCurrentIndex(1) # Переход на вторую страницу
 
     def categories(self, category):
         # Возвращает отсортированный список по заранее заданным критериям по категориям.
         match(category):
-            case 'Спорт': filtered = self.df.loc[(self.df['acceleration'] > 10) & (self.df['horsepower'] > 200)] # Фильтры пока что случайные
+            case 'Спорт': filtered = self.df.loc[(self.df['acceleration'] > 12) & (self.df['horsepower'] > 200)] # Фильтры пока что случайные
             # Сюда в будущем добавлять остальные категории
         return filtered
     
@@ -66,9 +70,21 @@ class MainWindow(QMainWindow):
         if current_item: # Проверка на None 
             car_name = current_item.text() # Получение текстового значения выбранного предмета списка (Название автомобиля)
             row = df[df['name'] == car_name].to_numpy().tolist()[0] # Получение массива с данными выбранного автомобиля
-            for i in range(self.table.rowCount()): # 
-                table_item = self.table.item(i, 1) # Заполнение таблицы полученными данными
-                table_item.setText(str(row[i]))    # 
+            for i in range(1, self.table.rowCount()+1): # 
+                table_item = self.table.item(i-1, 1)    # Заполнение таблицы полученными данными
+                table_item.setText(str(row[i]))         # 
+            self.lb_carName.setText(car_name) # Отрисовка названия автомобиля
+        
+            pixmap = QPixmap(f"cars_photos/{car_name}.png") # Загрузка фотографии машины из папки cars_photos (на фотографии ford f250 другая машина)
+            if pixmap.isNull(): # Проверка на Null
+                pixmap = QPixmap("cars_photos/default_image.png") # Если Null, то загружается заглушка default_image из той же папки
+            scaled_pixmap = pixmap.scaled( # 
+                self.photo.width(),        # 
+                self.photo.height(),       # Автоматическое масштабирование изображения
+                Qt.KeepAspectRatio         # 
+            )                              # 
+            self.photo.setPixmap(scaled_pixmap) # Отрисовка загруженной фотографии
+            self.photo.setToolTip(car_name) # Установка подсказки при наведении
 
 
     def update_bar(self, x, height):
