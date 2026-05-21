@@ -7,23 +7,225 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>900</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1200</width>
-    <height>900</height>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1200</width>
-    <height>900</height>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+background-color: rgb(44, 44, 46);
+}
+
+QPushButton {
+background:rgb(44, 44, 46);
+color:rgb(250, 249, 245);
+font:20pt &quot;Cascadia Mono SemiBold&quot;;
+border: 3px solid rgb(98, 97, 95);
+border-radius: 10px;
+}
+QPushButton:hover {
+background:rgb(38, 38, 36);
+}
+QPushButton:pressed {
+background:rgb(70, 70, 70);
+}
+
+QPushButton#btn_category_1 {
+background-color: rgba(255, 255, 255, 0);
+}
+QPushButton#btn_category_2 {
+background-color: rgba(255, 255, 255, 0);
+}
+QPushButton#btn_category_3 {
+background-color: rgba(255, 255, 255, 0);
+}
+QPushButton#btn_category_4 {
+background-color: rgba(255, 255, 255, 0);
+}
+
+QListWidget {
+    background-color: rgb(58, 58, 60);
+    border: 1px solid #555;
+    border-radius: 4px;
+    color: white;
+	outline: none;
+}
+QListWidget::item {
+    padding: 6px;
+    border-bottom: 1px solid #444;
+}
+QListWidget::item:hover {
+    background-color: #3c3f41;
+}
+QListWidget::item:selected {
+    background-color:  rgb(74, 144, 217);
+    color: white;
+	outline: none;
+}
+
+QTableWidget {
+    background-color: #2b2b2b;
+    gridline-color: #555;
+    border: 1px solid #555;
+    color: white;
+    outline: none;
+}
+QTableWidget::item {
+    padding: 4px;
+    border: none;
+}
+QTableWidget::item:hover {
+    background-color: #3c3f41;
+}
+QTableWidget::item:selected {
+    background-color:  rgb(74, 144, 217);
+    color: white;
+}
+QHeaderView::section {
+    background-color: #3c3f41;
+    color: white;
+    padding: 4px;
+    border: 1px solid #555;
+    font-weight: bold;
+}
+
+QLabel {
+color: rgb(250, 249, 245);
+font :&quot;Cascadia Mono SemiBold&quot;;
+}
+
+QFrame#fr_category_1 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QFrame#fr_category_2 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QFrame#fr_category_3 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QFrame#fr_category_4 {
+background:rgb(58, 58, 60);
+border-radius: 20px;
+}
+
+QLabel#carPhoto_1 {
+border: 3px solid rgb(74, 74, 76);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+QLabel#carPhoto_2 {
+border: 3px solid rgb(74, 74, 76);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+QLabel#carPhoto_3 {
+border: 3px solid rgb(74, 74, 76);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+QLabel#carPhoto_4 {
+border: 3px solid rgb(74, 74, 76);
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+QLabel#lb_bg1 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QLabel#lb_bg2 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QLabel#lb_bg3 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QLabel#lb_bg4 {
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+}
+QLabel#lb_bg5 {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-bottom-left-radius: 10px;
+}
+QLabel#lb_bg6 {
+border: 3px solid rgb(74, 74, 76);
+border-radius: 10px;
+}
+QLabel#lb_info {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 20px;
+font:12pt;
+margin: 5px;
+}
+QLabel#lb_list {
+background:rgb(58, 58, 60);
+border: 3px solid rgb(74, 74, 76);
+border-radius: 10px;
+}
+
+QLabel#lb_LowPrice {
+color: rgb(74, 144, 217);
+background: rgb(44, 44, 46);
+border: 3px solid  rgb(74, 74, 76);
+border-radius: 10px;
+}
+QLabel#lb_MidPrice {
+color: rgb(74, 144, 217);
+background: rgb(44, 44, 46);
+border: 3px solid  rgb(74, 74, 76);
+border-radius: 10px;
+}
+QLabel#lb_HighPrice {
+color: rgb(74, 144, 217);
+background: rgb(44, 44, 46);
+border: 3px solid  rgb(74, 74, 76);
+border-radius: 10px;
+}
+
+
+
+QLabel#photo_LowPrice {
+border-radius: 10px;
+}
+QLabel#photo_MidPrice {
+border-radius: 10px;
+}
+QLabel#photo_HighPrice {
+border-radius: 10px;
+}
+QLabel#photo {
+border-radius: 10px;
+}</string>
+  </property>
+  <property name="animated">
+   <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -32,7 +234,7 @@
       <x>0</x>
       <y>0</y>
       <width>1200</width>
-      <height>900</height>
+      <height>800</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -42,15 +244,15 @@
      <widget class="QLabel" name="lb_greetings">
       <property name="geometry">
        <rect>
-        <x>440</x>
-        <y>310</y>
-        <width>321</width>
-        <height>121</height>
+        <x>350</x>
+        <y>30</y>
+        <width>500</width>
+        <height>70</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>20</pointsize>
+        <pointsize>38</pointsize>
        </font>
       </property>
       <property name="text">
@@ -63,107 +265,745 @@
      <widget class="QPushButton" name="btn_show">
       <property name="geometry">
        <rect>
-        <x>640</x>
-        <y>500</y>
-        <width>201</width>
+        <x>880</x>
+        <y>50</y>
+        <width>231</width>
         <height>61</height>
        </rect>
       </property>
       <property name="text">
-       <string>Показать</string>
+       <string>Показать все</string>
       </property>
      </widget>
-     <widget class="QComboBox" name="cb_categories">
+     <widget class="QLabel" name="lb_bg6">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>500</y>
-        <width>211</width>
-        <height>61</height>
+        <x>330</x>
+        <y>-20</y>
+        <width>540</width>
+        <height>130</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>20</pointsize>
+        <pointsize>26</pointsize>
        </font>
       </property>
-      <property name="editable">
-       <bool>false</bool>
+      <property name="styleSheet">
+       <string notr="true"/>
       </property>
-      <property name="maxVisibleItems">
-       <number>5</number>
+      <property name="text">
+       <string/>
       </property>
-      <property name="insertPolicy">
-       <enum>QComboBox::InsertAtBottom</enum>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
-      <property name="sizeAdjustPolicy">
-       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
+     </widget>
+     <widget class="QFrame" name="fr_category_1">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>140</y>
+        <width>500</width>
+        <height>310</height>
+       </rect>
       </property>
-      <property name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="lb_carName_1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Спорт (Другие пока выдадут ошибку)</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="carPhoto_1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>500</width>
+         <height>260</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 85, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_category_1">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>310</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="fr_category_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>470</y>
+        <width>500</width>
+        <height>310</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="carPhoto_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>500</width>
+         <height>260</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 85, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lb_carName_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Название категории 2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_category_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>310</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="fr_category_3">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>140</y>
+        <width>500</width>
+        <height>310</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="carPhoto_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>500</width>
+         <height>260</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 85, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lb_carName_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Название категории 3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_category_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>310</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="fr_category_4">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>470</y>
+        <width>500</width>
+        <height>310</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="carPhoto_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>500</width>
+         <height>260</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(170, 85, 255);</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lb_carName_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Название категории 4</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="btn_category_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>500</width>
+         <height>310</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <zorder>lb_bg6</zorder>
+     <zorder>lb_greetings</zorder>
+     <zorder>btn_show</zorder>
+     <zorder>fr_category_1</zorder>
+     <zorder>fr_category_2</zorder>
+     <zorder>fr_category_3</zorder>
+     <zorder>fr_category_4</zorder>
+    </widget>
+    <widget class="QWidget" name="Categories">
+     <widget class="QLabel" name="lb_choice">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>30</y>
+        <width>500</width>
+        <height>70</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Выберите ценовую категорию</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
        <bool>true</bool>
       </property>
-      <item>
-       <property name="text">
-        <string>Без категории</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Спорт</string>
-       </property>
-      </item>
      </widget>
+     <widget class="QLabel" name="lb_LowPrice">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>180</y>
+        <width>400</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Цена - Цена</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_bg1">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>160</y>
+        <width>900</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_bg2">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>370</y>
+        <width>900</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_bg3">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>580</y>
+        <width>900</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_MidPrice">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>390</y>
+        <width>400</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Цена - Цена</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_HighPrice">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>600</y>
+        <width>400</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Цена - Цена</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photo_LowPrice">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>175</y>
+        <width>340</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photo_MidPrice">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>385</y>
+        <width>340</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="photo_HighPrice">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>595</y>
+        <width>340</width>
+        <height>170</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_back">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>30</y>
+        <width>150</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Назад</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_bg4">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>-20</y>
+        <width>540</width>
+        <height>130</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_goto_LowPrice">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>180</y>
+        <width>60</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>↑</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_goto_MidPrice">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>390</y>
+        <width>60</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>↑</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_goto_HighPrice">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>600</y>
+        <width>60</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>↑</string>
+      </property>
+      <property name="autoDefault">
+       <bool>false</bool>
+      </property>
+      <property name="default">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <zorder>lb_bg4</zorder>
+     <zorder>lb_bg1</zorder>
+     <zorder>lb_choice</zorder>
+     <zorder>lb_LowPrice</zorder>
+     <zorder>lb_bg2</zorder>
+     <zorder>lb_bg3</zorder>
+     <zorder>lb_MidPrice</zorder>
+     <zorder>lb_HighPrice</zorder>
+     <zorder>photo_LowPrice</zorder>
+     <zorder>photo_MidPrice</zorder>
+     <zorder>photo_HighPrice</zorder>
+     <zorder>btn_back</zorder>
+     <zorder>btn_goto_LowPrice</zorder>
+     <zorder>btn_goto_MidPrice</zorder>
+     <zorder>btn_goto_HighPrice</zorder>
     </widget>
-    <widget class="QWidget" name="Main">
+    <widget class="QWidget" name="Categories_inspect">
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>650</x>
-        <y>50</y>
+        <x>660</x>
+        <y>100</y>
         <width>521</width>
         <height>401</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="Plot"/>
      </widget>
-     <widget class="QLabel" name="lb_info">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>110</y>
-        <width>531</width>
-        <height>341</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>15</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QListWidget" name="list">
       <property name="geometry">
        <rect>
-        <x>45</x>
-        <y>520</y>
-        <width>491</width>
-        <height>281</height>
+        <x>50</x>
+        <y>490</y>
+        <width>300</width>
+        <height>220</height>
        </rect>
       </property>
      </widget>
      <widget class="QTableWidget" name="table">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>518</y>
-        <width>271</width>
-        <height>345</height>
+        <x>360</x>
+        <y>430</y>
+        <width>280</width>
+        <height>350</height>
        </rect>
       </property>
       <property name="layoutDirection">
@@ -179,7 +1019,7 @@
        <enum>QFrame::Sunken</enum>
       </property>
       <property name="alternatingRowColors">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
       <property name="showGrid">
        <bool>true</bool>
@@ -221,16 +1061,19 @@
        <bool>false</bool>
       </attribute>
       <attribute name="verticalHeaderDefaultSectionSize">
-       <number>40</number>
+       <number>39</number>
       </attribute>
       <attribute name="verticalHeaderHighlightSections">
        <bool>true</bool>
+      </attribute>
+      <attribute name="verticalHeaderMinimumSectionSize">
+       <number>20</number>
       </attribute>
       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
       </attribute>
       <attribute name="verticalHeaderStretchLastSection">
-       <bool>false</bool>
+       <bool>true</bool>
       </attribute>
       <row>
        <property name="text">
@@ -367,22 +1210,22 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>810</y>
-        <width>481</width>
-        <height>51</height>
+        <y>720</y>
+        <width>300</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="text">
-       <string>Отобразить подробную информацию об автомобиле</string>
+       <string>Подробнее ⤷</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn_back">
+     <widget class="QPushButton" name="btn_back_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
+        <x>50</x>
         <y>30</y>
-        <width>231</width>
-        <height>61</height>
+        <width>150</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="text">
@@ -392,10 +1235,10 @@
      <widget class="QLabel" name="lb_category">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>30</y>
-        <width>271</width>
-        <height>61</height>
+        <x>460</x>
+        <y>15</y>
+        <width>300</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -414,9 +1257,9 @@
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>470</y>
-        <width>301</width>
-        <height>41</height>
+        <y>430</y>
+        <width>300</width>
+        <height>50</height>
        </rect>
       </property>
       <property name="font">
@@ -431,13 +1274,74 @@
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="lb_carName">
+     <widget class="QLabel" name="photo">
       <property name="geometry">
        <rect>
-        <x>830</x>
-        <y>790</y>
-        <width>361</width>
-        <height>71</height>
+        <x>660</x>
+        <y>510</y>
+        <width>400</width>
+        <height>270</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(170, 85, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btn_menu">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>30</y>
+        <width>210</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>На главную</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_bg5">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>0</y>
+        <width>1100</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>26</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_price">
+      <property name="geometry">
+       <rect>
+        <x>730</x>
+        <y>15</y>
+        <width>441</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -446,36 +1350,54 @@
        </font>
       </property>
       <property name="text">
-       <string/>
+       <string>Цена - Цена</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="lb_info">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>110</y>
+        <width>590</width>
+        <height>310</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="photo">
-      <property name="geometry">
-       <rect>
-        <x>850</x>
-        <y>510</y>
-        <width>321</width>
-        <height>211</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
+     <zorder>lb_info</zorder>
+     <zorder>lb_bg5</zorder>
+     <zorder>verticalLayoutWidget</zorder>
+     <zorder>list</zorder>
+     <zorder>table</zorder>
+     <zorder>btn_inspect</zorder>
+     <zorder>btn_back_2</zorder>
+     <zorder>lb_category</zorder>
+     <zorder>lb_list</zorder>
+     <zorder>photo</zorder>
+     <zorder>btn_menu</zorder>
+     <zorder>lb_price</zorder>
     </widget>
    </widget>
   </widget>
