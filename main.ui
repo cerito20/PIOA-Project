@@ -56,6 +56,15 @@ background-color: rgba(255, 255, 255, 0);
 QPushButton#btn_category_4 {
 background-color: rgba(255, 255, 255, 0);
 }
+QPushButton#btn_goto_LowPrice {
+background-color: rgba(255, 255, 255, 0);
+}
+QPushButton#btn_goto_MidPrice {
+background-color: rgba(255, 255, 255, 0);
+}
+QPushButton#btn_goto_HighPrice {
+background-color: rgba(255, 255, 255, 0);
+}
 
 QListWidget {
     background-color: rgb(58, 58, 60);
@@ -636,7 +645,7 @@ border-radius: 10px;
        <rect>
         <x>170</x>
         <y>180</y>
-        <width>400</width>
+        <width>450</width>
         <height>160</height>
        </rect>
       </property>
@@ -732,7 +741,7 @@ border-radius: 10px;
        <rect>
         <x>170</x>
         <y>390</y>
-        <width>400</width>
+        <width>450</width>
         <height>160</height>
        </rect>
       </property>
@@ -756,7 +765,7 @@ border-radius: 10px;
        <rect>
         <x>170</x>
         <y>600</y>
-        <width>400</width>
+        <width>450</width>
         <height>160</height>
        </rect>
       </property>
@@ -778,7 +787,7 @@ border-radius: 10px;
      <widget class="QLabel" name="photo_LowPrice">
       <property name="geometry">
        <rect>
-        <x>690</x>
+        <x>680</x>
         <y>175</y>
         <width>340</width>
         <height>170</height>
@@ -802,7 +811,7 @@ border-radius: 10px;
      <widget class="QLabel" name="photo_MidPrice">
       <property name="geometry">
        <rect>
-        <x>690</x>
+        <x>680</x>
         <y>385</y>
         <width>340</width>
         <height>170</height>
@@ -826,7 +835,7 @@ border-radius: 10px;
      <widget class="QLabel" name="photo_HighPrice">
       <property name="geometry">
        <rect>
-        <x>690</x>
+        <x>680</x>
         <y>595</y>
         <width>340</width>
         <height>170</height>
@@ -896,14 +905,14 @@ border-radius: 10px;
      <widget class="QPushButton" name="btn_goto_LowPrice">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>180</y>
-        <width>60</width>
-        <height>160</height>
+        <x>150</x>
+        <y>160</y>
+        <width>900</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="text">
-       <string>↑</string>
+       <string/>
       </property>
       <property name="autoDefault">
        <bool>false</bool>
@@ -918,14 +927,14 @@ border-radius: 10px;
      <widget class="QPushButton" name="btn_goto_MidPrice">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>390</y>
-        <width>60</width>
-        <height>160</height>
+        <x>150</x>
+        <y>370</y>
+        <width>900</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="text">
-       <string>↑</string>
+       <string/>
       </property>
       <property name="autoDefault">
        <bool>false</bool>
@@ -940,14 +949,14 @@ border-radius: 10px;
      <widget class="QPushButton" name="btn_goto_HighPrice">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>600</y>
-        <width>60</width>
-        <height>160</height>
+        <x>150</x>
+        <y>580</y>
+        <width>900</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="text">
-       <string>↑</string>
+       <string/>
       </property>
       <property name="autoDefault">
        <bool>false</bool>
