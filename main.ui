@@ -112,6 +112,42 @@ QHeaderView::section {
     font-weight: bold;
 }
 
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    width: 0px;
+    height: 0px;
+    background: none;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical,
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+QScrollBar:vertical {
+    background: #2b2b2b;
+    width: 10px;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background: #555;
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+QScrollBar:horizontal {
+    background: #2b2b2b;
+    height: 10px;
+    border: none;
+}
+
+QScrollBar::handle:horizontal {
+    background: #555;
+    border-radius: 5px;
+    min-width: 20px;
+}
+
 QLabel {
 color: rgb(250, 249, 245);
 font :&quot;Cascadia Mono SemiBold&quot;;
@@ -338,7 +374,7 @@ border-radius: 10px;
         </font>
        </property>
        <property name="text">
-        <string>Спорт (Другие пока выдадут ошибку)</string>
+        <string>&quot;Семейные&quot; автомобили</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -385,7 +421,7 @@ border-radius: 10px;
      <widget class="QFrame" name="fr_category_2">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>350</x>
         <y>470</y>
         <width>500</width>
         <height>310</height>
@@ -436,7 +472,7 @@ border-radius: 10px;
         </font>
        </property>
        <property name="text">
-        <string>Название категории 2</string>
+        <string>Внедорожники</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -510,7 +546,7 @@ border-radius: 10px;
         </font>
        </property>
        <property name="text">
-        <string>Название категории 3</string>
+        <string>Спорткары</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -530,87 +566,12 @@ border-radius: 10px;
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="fr_category_4">
-      <property name="geometry">
-       <rect>
-        <x>610</x>
-        <y>470</y>
-        <width>500</width>
-        <height>310</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="carPhoto_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>50</y>
-         <width>500</width>
-         <height>260</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>16</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(170, 85, 255);</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="lb_carName_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>500</width>
-         <height>50</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>16</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>Название категории 4</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="btn_category_4">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>500</width>
-         <height>310</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-      </widget>
-     </widget>
      <zorder>lb_bg6</zorder>
      <zorder>lb_greetings</zorder>
      <zorder>btn_show</zorder>
      <zorder>fr_category_1</zorder>
      <zorder>fr_category_2</zorder>
      <zorder>fr_category_3</zorder>
-     <zorder>fr_category_4</zorder>
     </widget>
     <widget class="QWidget" name="Categories">
      <widget class="QLabel" name="lb_choice">
@@ -784,7 +745,7 @@ border-radius: 10px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="photo_LowPrice">
+     <widget class="QLabel" name="photo_price_1">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -808,7 +769,7 @@ border-radius: 10px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="photo_MidPrice">
+     <widget class="QLabel" name="photo_price_2">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -832,7 +793,7 @@ border-radius: 10px;
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="photo_HighPrice">
+     <widget class="QLabel" name="photo_price_3">
       <property name="geometry">
        <rect>
         <x>680</x>
@@ -976,9 +937,9 @@ border-radius: 10px;
      <zorder>lb_bg3</zorder>
      <zorder>lb_MidPrice</zorder>
      <zorder>lb_HighPrice</zorder>
-     <zorder>photo_LowPrice</zorder>
-     <zorder>photo_MidPrice</zorder>
-     <zorder>photo_HighPrice</zorder>
+     <zorder>photo_price_1</zorder>
+     <zorder>photo_price_2</zorder>
+     <zorder>photo_price_3</zorder>
      <zorder>btn_back</zorder>
      <zorder>btn_goto_LowPrice</zorder>
      <zorder>btn_goto_MidPrice</zorder>
@@ -991,7 +952,7 @@ border-radius: 10px;
         <x>660</x>
         <y>100</y>
         <width>521</width>
-        <height>401</height>
+        <height>671</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="Plot"/>
@@ -1000,9 +961,9 @@ border-radius: 10px;
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>490</y>
+        <y>480</y>
         <width>300</width>
-        <height>220</height>
+        <height>230</height>
        </rect>
       </property>
      </widget>
@@ -1010,10 +971,15 @@ border-radius: 10px;
       <property name="geometry">
        <rect>
         <x>360</x>
-        <y>430</y>
+        <y>420</y>
         <width>280</width>
-        <height>350</height>
+        <height>360</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+       </font>
       </property>
       <property name="layoutDirection">
        <enum>Qt::LeftToRight</enum>
@@ -1026,6 +992,18 @@ border-radius: 10px;
       </property>
       <property name="frameShadow">
        <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="autoScroll">
+       <bool>true</bool>
+      </property>
+      <property name="autoScrollMargin">
+       <number>16</number>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
       </property>
       <property name="alternatingRowColors">
        <bool>false</bool>
@@ -1046,16 +1024,19 @@ border-radius: 10px;
        <bool>false</bool>
       </property>
       <property name="rowCount">
-       <number>8</number>
+       <number>9</number>
       </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
       </attribute>
       <attribute name="horizontalHeaderDefaultSectionSize">
-       <number>130</number>
+       <number>135</number>
       </attribute>
       <attribute name="horizontalHeaderMinimumSectionSize">
-       <number>40</number>
+       <number>30</number>
       </attribute>
       <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
@@ -1070,13 +1051,13 @@ border-radius: 10px;
        <bool>false</bool>
       </attribute>
       <attribute name="verticalHeaderDefaultSectionSize">
-       <number>39</number>
+       <number>36</number>
       </attribute>
       <attribute name="verticalHeaderHighlightSections">
        <bool>true</bool>
       </attribute>
       <attribute name="verticalHeaderMinimumSectionSize">
-       <number>20</number>
+       <number>36</number>
       </attribute>
       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
        <bool>false</bool>
@@ -1084,6 +1065,11 @@ border-radius: 10px;
       <attribute name="verticalHeaderStretchLastSection">
        <bool>true</bool>
       </attribute>
+      <row>
+       <property name="text">
+        <string>New Row</string>
+       </property>
+      </row>
       <row>
        <property name="text">
         <string>New Row</string>
@@ -1136,7 +1122,7 @@ border-radius: 10px;
       </column>
       <item row="0" column="0">
        <property name="text">
-        <string>Расход топлива (Миль на галлон)</string>
+        <string>Тип двигателя</string>
        </property>
       </item>
       <item row="0" column="1">
@@ -1146,7 +1132,7 @@ border-radius: 10px;
       </item>
       <item row="1" column="0">
        <property name="text">
-        <string>Количество циллиндров</string>
+        <string>Обьём двигателя / аккумулятора</string>
        </property>
       </item>
       <item row="1" column="1">
@@ -1156,7 +1142,7 @@ border-radius: 10px;
       </item>
       <item row="2" column="0">
        <property name="text">
-        <string>Обьём двигателя</string>
+        <string>Количество л.с.</string>
        </property>
       </item>
       <item row="2" column="1">
@@ -1166,7 +1152,7 @@ border-radius: 10px;
       </item>
       <item row="3" column="0">
        <property name="text">
-        <string>Количество л.с.</string>
+        <string>Макс. скорость (км/ч)</string>
        </property>
       </item>
       <item row="3" column="1">
@@ -1176,7 +1162,7 @@ border-radius: 10px;
       </item>
       <item row="4" column="0">
        <property name="text">
-        <string>Общий вес (Кг)</string>
+        <string>(0 - 100 км/ч, с)</string>
        </property>
       </item>
       <item row="4" column="1">
@@ -1186,7 +1172,7 @@ border-radius: 10px;
       </item>
       <item row="5" column="0">
        <property name="text">
-        <string>Ускорение</string>
+        <string>Цена в долларах</string>
        </property>
       </item>
       <item row="5" column="1">
@@ -1196,7 +1182,7 @@ border-radius: 10px;
       </item>
       <item row="6" column="0">
        <property name="text">
-        <string>Год выпуска (19XX)</string>
+        <string>Тип топлива</string>
        </property>
       </item>
       <item row="6" column="1">
@@ -1206,12 +1192,22 @@ border-radius: 10px;
       </item>
       <item row="7" column="0">
        <property name="text">
-        <string>Страна-производитель</string>
+        <string>Количество мест</string>
        </property>
       </item>
       <item row="7" column="1">
        <property name="text">
         <string/>
+       </property>
+      </item>
+      <item row="8" column="0">
+       <property name="text">
+        <string>Крутящий момент</string>
+       </property>
+      </item>
+      <item row="8" column="1">
+       <property name="text">
+        <string> </string>
        </property>
       </item>
      </widget>
@@ -1266,7 +1262,7 @@ border-radius: 10px;
       <property name="geometry">
        <rect>
         <x>50</x>
-        <y>430</y>
+        <y>420</y>
         <width>300</width>
         <height>50</height>
        </rect>
@@ -1286,10 +1282,10 @@ border-radius: 10px;
      <widget class="QLabel" name="photo">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>510</y>
-        <width>400</width>
-        <height>270</height>
+        <x>360</x>
+        <y>150</y>
+        <width>280</width>
+        <height>250</height>
        </rect>
       </property>
       <property name="font">
@@ -1370,8 +1366,8 @@ border-radius: 10px;
        <rect>
         <x>50</x>
         <y>110</y>
-        <width>590</width>
-        <height>310</height>
+        <width>300</width>
+        <height>300</height>
        </rect>
       </property>
       <property name="font">
