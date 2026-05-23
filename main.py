@@ -187,17 +187,17 @@ class MainWindow(QMainWindow):
         self.fig.clear()                      # Очистка холста от предыдущего графика
         self.axes = self.fig.add_subplot(111) # 
         if self.category_index != 0:
-            self.axes.barh(df["Label"], df[f"{COLUMNS[self.category_index - 1]}"]) # 
-            self.axes.set_yticks(range(len(df["Label"])))                          # 
-            self.axes.set_yticklabels(df["Label"], rotation=0)                     # 
-            self.axes.set_xlabel('Марка, модель машины')                           # 
-            match self.category:                                                   # 
-                case 'Семейная':                                                   # Если category_index != 0 т.е. категория есть,
-                    self.axes.set_ylabel('Кол-во сидений')                         # формируем собственный столбчатый график для каждой категории
-                case 'Внедорожная':                                                # 
-                    self.axes.set_ylabel('Объем двигателя')                        # 
-                case 'Спортивная':                                                 # 
-                    self.axes.set_ylabel('Кол-во лошадинных сил')                  # 
+            self.axes.barh(df["Cars Names"], df[f"{COLUMNS[self.category_index - 1]}"]) # 
+            self.axes.set_yticks(range(len(df["Cars Names"])))                          # 
+            self.axes.set_yticklabels(df["Cars Names"], rotation=0)                     # 
+            self.axes.set_ylabel('Модель машины')                                       # 
+            match self.category:                                                        # 
+                case 'Семейная':                                                        # Если category_index != 0 т.е. категория есть,
+                    self.axes.set_xlabel('Кол-во сидений')                              # формируем собственный столбчатый график для каждой категории
+                case 'Внедорожная':                                                     # 
+                    self.axes.set_xlabel('Объем двигателя')                             # 
+                case 'Спортивная':                                                      # 
+                    self.axes.set_xlabel('Кол-во лошадинных сил')                       # 
         else:
             counts = df["Company Names"].value_counts() # 
             threshold = 0.02 * counts.sum()             # 
