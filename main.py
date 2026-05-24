@@ -241,7 +241,7 @@ class MainWindow(QMainWindow):
                 table_item = self.table.item(i-1, 1)    # Заполнение таблицы полученными данными
                 table_item.setText(str(row[i+1]))       #
         
-            pixmap = QPixmap(f"cars_photos/{car_name.split()[1]}.png") # Загрузка фотографии машины из папки cars_photos
+            pixmap = QPixmap(f"cars_photos/{' '.join(car_name.split()[1:])}.png") # Загрузка фотографии машины из папки cars_photos
             if pixmap.isNull(): # Проверка на Null
                 pixmap = QPixmap("cars_photos/default_image.png") # Если Null, то загружается заглушка default_image из той же папки
             scaled_pixmap = pixmap.scaled( # 
