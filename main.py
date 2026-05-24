@@ -16,9 +16,6 @@ from PyQt5.QtWidgets import (
     QVBoxLayout, QListWidget
 )
 
-import kagglehub
-from kagglehub import KaggleDatasetAdapter
-
 from descriptions import descriptions # Импорт descriptions.py
 import check_data # Импорт check_data.py
 
@@ -56,13 +53,14 @@ PHOTOS = [
      'cars_photos/sport_High.png',],
 ]
 
+# Смирнов С.А.
 def resource_path(relative_path):
     # Функция которая в будущем понадобится для сборки приложения
     if hasattr(sys, '_MEIPASS'):
         return os.path.join(sys._MEIPASS, relative_path)
     return os.path.join(os.path.abspath("."), relative_path)
 
-
+# Смирнов С.А.
 class MainWindow(QMainWindow):
     def __init__(self, dataframe):
         super().__init__()
@@ -100,6 +98,7 @@ class MainWindow(QMainWindow):
         self.btn_menu.clicked.connect(lambda: self.switch_pages(menu=True))
         self.btn_inspect.clicked.connect(self.inspect)
 
+    # Смирнов С.А.
     def switch_pages(self, forward=False, back=False, menu=False):
         # Меняет страницу в зависимости от переданных переменных
         if forward: # Вперёд
@@ -113,6 +112,7 @@ class MainWindow(QMainWindow):
             self.rebuild_scene()
             self.stackedWidget.setCurrentIndex(0)
     
+    # Смирнов С.А.
     def show_all(self):
         # Вывод всего датасета целиком
         self.rebuild_scene(do_rebuild=True) # 
@@ -123,6 +123,7 @@ class MainWindow(QMainWindow):
         self.switch_pages(forward=True) # Переход на 2 страницы вперёд
         self.switch_pages(forward=True) # чтобы пропустить экран выбора цены
 
+    # Смирнов С.А.
     def choose_category(self, choice):
          # Функционал кнопок на первой странице
         self.category_index = choice # Назначение индекса категории
@@ -144,6 +145,7 @@ class MainWindow(QMainWindow):
 
         self.switch_pages(forward=True) # Переход на следующую страницу
 
+    # Смирнов С.А.
     def draw_price(self, index):
         # Отрисовывает значение цен на второй странице
         category = PRICES[index - 1]  # Получение списка цен для конкретной категории
@@ -151,6 +153,7 @@ class MainWindow(QMainWindow):
         self.lb_MidPrice.setText(f'${category[1][0]} — ${category[1][1]}')  # Отрисовка цен
         self.lb_HighPrice.setText(f'${category[2][0]} — ${category[2][1]}') # 
 
+    # Смирнов С.А.
     def choose_price(self, choice):
         # Функционал кнопок на второй странице 
         self.price_index = choice # Назначение индекса цен
@@ -158,6 +161,7 @@ class MainWindow(QMainWindow):
         self.draw_results() # Отрисовка 3 страницы
         self.switch_pages(forward=True) # Переход на следующую страницу
 
+    # Смирнов С.А.
     def draw_results(self):
         # Отрисовывает информацию на 3 странице 
         self.lb_category.setText(self.category) # Меняет название категории справа сверху
@@ -171,6 +175,7 @@ class MainWindow(QMainWindow):
         self.photo.clear() # Очистка прошлой фотографии
         self.photo.setToolTip("") # Очистка подсказки при наведении на фотографию
 
+    # Червяков Н. С.
     def filters(self):
         # Возвращает отфильтрованный датасет 
         FILTERS = [
@@ -186,6 +191,7 @@ class MainWindow(QMainWindow):
         filtered["Label"] = filtered["Company Names"] + " " + filtered["Cars Names"] # Формируем названия машин в формате "Компания" + "Марка"
         return filtered
 
+    # Червяков Н. С.
     def update_bar(self, df):
         # Обновляет график
         COLUMNS = [
@@ -225,11 +231,13 @@ class MainWindow(QMainWindow):
         self.fig.tight_layout() # Масштабирование графика по содержимому
         self.canvas.draw() # Отрисовка графика
 
+    # Смирнов С.А.
     def update_list(self, new_list):
         # Обновляет список
         self.list.clear() # Очистка от прошлых значений
         self.list.addItems(new_list['Label']) # Добавление новых значений
 
+    # Смирнов С.А.
     def inspect(self):
         # Обновляет таблицу для выбранного из списка автомобиля
         current_item = self.list.currentItem() # Получение выбранного предмета списка
@@ -240,7 +248,6 @@ class MainWindow(QMainWindow):
             for i in range(1, self.table.rowCount()+1): # 
                 table_item = self.table.item(i-1, 1)    # Заполнение таблицы полученными данными
                 table_item.setText(str(row[i+1]))       #
-        
             pixmap = QPixmap(f"cars_photos/{' '.join(car_name.split()[1:])}.png") # Загрузка фотографии машины из папки cars_photos
             if pixmap.isNull(): # Проверка на Null
                 pixmap = QPixmap("cars_photos/default_image.png") # Если Null, то загружается заглушка default_image из той же папки
@@ -252,6 +259,7 @@ class MainWindow(QMainWindow):
             self.photo.setPixmap(scaled_pixmap) # Отрисовка загруженной фотографии
             self.photo.setToolTip(car_name) # Установка подсказки при наведении
 
+    # Смирнов С.А.
     def rebuild_scene(self, do_rebuild=False):
         if do_rebuild:
             self.btn_back_2.hide()                   # 
