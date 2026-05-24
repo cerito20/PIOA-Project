@@ -77,6 +77,16 @@ class MainWindow(QMainWindow):
         self.Plot.addWidget(self.toolbar)                   # 
         self.Plot.addWidget(self.canvas)                    #
 
+        for i in range(1, len(CATEGORIES)):
+            pixmap = QPixmap(f"cars_photos/{CATEGORIES[i]}.png") # Загрузка изображений для главной страницы
+            scaled_pixmap = pixmap.scaled(          # 
+                    self.carPhoto_1.width(),        # 
+                    self.carPhoto_1.height(),       # Автоматическое масштабирование изображения
+                    Qt.KeepAspectRatio              # 
+                )
+            label = getattr(self, f"carPhoto_{i}") # Назначение для всех обьектов через цикл
+            label.setPixmap(scaled_pixmap) # Отрисовка загруженной фотографии
+
         # Подключение кнопок
         self.btn_show.clicked.connect(self.show_all)
         self.btn_category_1.clicked.connect(lambda: self.choose_category(1))
